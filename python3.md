@@ -68,7 +68,7 @@ while n > 0:
 
 ```
 
-#### Interpolação de Strings 
+#### Interpolação de Strings
 
 [Mais informações na documentação oficial](https://docs.python.org/3/library/string.html#formatexamples)
 
@@ -83,3 +83,8 @@ print("Tentativa {} de {}".format(rodada, total_de_tentativas))
 for rodada in range(1,10):
   print(rodada)
 ```
+
+#### Built-in Functions
+
+São funções que não precissam ser importadas.
+[Lista de funções](https://docs.python.org/3/library/functions.html)
