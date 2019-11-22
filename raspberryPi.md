@@ -13,30 +13,30 @@ tags: raspberrypi, iot
 
 > - A numeração pelo GPIO leva em conta que alguns GPIOs têm um significado especial, pois representam o pino terra (GROUND) ou a alimentação (3V ou 5V). Esses pinos não possuem número na numeração GPIO. Esse esquema de numeração também é chamado de GPIO.BCM (broadcom).
 
-#### Configurando SSH:
+#### Configurando SSH
 
 Para habilitar acesso SSH na raspberry basta criar um arquivo de nome ssh, _sem extensão_, na raiz da partição boot.
 
-#### Configurar o Wifi:
+#### Configurar o Wifi
 
 Para configurar a rede wifi basta criar um arquivo com o nome _wpa_supplicant.conf_ na raiz da partição boot, inserindo o seguinte conteúdo no arquivo:
 
-```
+```shell
 country=BR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
 network={
-    ssid="NETWORK-NAME"
-    psk="NETWORK-PASSWORD"
+   ssid="NETWORK-NAME"
+   psk="NETWORK-PASSWORD"
 }
 ```
 
 > Diferente de outros equipamentos, como o Arduino, o Raspberry PI trabalha com 3.3V em seu GPIO.
 
-#### Definir o pino 7 como saída e atribuir nível alto, baixo e leitura:
+#### Definir o pino 7 como saída e atribuir nível alto, baixo e leitura
 
-```
+```shell
 gpio mode 7 out
 gpio write 7 1
 gpio write 7 0
@@ -44,9 +44,9 @@ gpio read 7
 
 ```
 
-#### Comando **_gpio readall_**:
+#### Comando **_gpio readall_**
 
-```
+```shell
  +-----+-----+---------+------+---+---Pi 3B--+---+------+---------+-----+-----+
  | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
  +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
@@ -83,9 +83,9 @@ gpio read 7
 |        Conexão física         | gpio -1 mode 7 out |
 |          Número GPIO          | gpio -g mode 7 out |
 
-#### Comando **_pinout_**:
+#### Comando **_pinout_**
 
-```
+```shell
 ,--------------------------------.
 | oooooooooooooooooooo J8     +====
 | 1ooooooooooooooooooo        | USB
@@ -135,9 +135,9 @@ GPIO26 (37) (38) GPIO20
 
 ```
 
-#### Exemplo I:
+#### Exemplo I
 
-```exemploI.py
+```python
 import RPi.GPIO as GPIO   #Biblioteca GPIO
 import time               #Biblioteca de tempo
 
@@ -155,21 +155,21 @@ while(1):
   time.sleep(2)
 ```
 
-#### Exemplo II:
+#### Exemplo II
 
-```
+```python
 import RPi.GPIO as GPIO
 import sys
 
 def inicializaBoard():
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setwarnings(False)
+   GPIO.setmode(GPIO.BOARD)
+   GPIO.setwarnings(False)
 
 def definePinoComoSaida(numeroPino):
-    GPIO.setup(numeroPino, GPIO.OUT)
+   GPIO.setup(numeroPino, GPIO.OUT)
 
 def escreveParaPorta(numeroPino, estadoPorta):
-    GPIO.output(numeroPino, estadoPorta)
+   GPIO.output(numeroPino, estadoPorta)
 
 numeroPino = int(sys.argv[1])
 estadoPorta = int(sys.argv[2])
@@ -179,30 +179,30 @@ definePinoComoSaida(numeroPino)
 escreveParaPorta(numeroPino, estadoPorta)
 ```
 
-#### Executando o comando informando os pinos e o estado:
+#### Executando o comando informando os pinos e o estado
 
-> python automate.py 7 0
-> python automate.py 7 1
-> python automate.py 11 0
-> python automate.py 11 1
+- python automate.py 7 0
+- python automate.py 7 1
+- python automate.py 11 0
+- python automate.py 11 1
 
 <hr>
 
-#### Instalar VNC:
+#### Instalar VNC
 
-```
+```shell
 sudo apt install tightvncserver -y
 ```
 
 - Para iniciar o Tight VNC Server basta dar o comando: tightvncserver, será solicitado uma senha. Posteriormente será dado uma mensagem semelhante:
 
-```
+```shell
 New 'X' server desktop is raspberry:2
 ```
 
 Para acessar a RPi pelo Remmina basta inserir o IP acrescido do :x (número dado na mensagem ao inciar o servidor).
 
-####Pigs
+#### Pigs
 
 > Ferramenta para controle de GPIO.
 
@@ -213,23 +213,23 @@ Para acessar a RPi pelo Remmina basta inserir o IP acrescido do :x (número dado
 - Desativar o GPIO17: pigs w 17 0
 - Ler o GPIO17: pigs r 17
 
-#### Atalho para acessar via SSH:
+#### Atalho para acessar via SSH
 
 - Crie um arquivo de nome **config** no diretório: ~/.ssh/ com o seguinte conteúdo:
 
-```
+```shell
 Host piLab
-    HostName 192.168.2.138
-    User pi
+   HostName 192.168.2.138
+   User pi
 ```
 
 Para acessar basta dar o comando: ssh piLab
 
 <hr>
 
-#### Comando Raspconfig:
+#### Comando Raspconfig
 
-```
+```shell
 sudo raspi-config
 
 ┌───────────────────┤ Raspberry Pi Software Configuration Tool (raspi-config) ├────────────────────┐
@@ -253,13 +253,25 @@ sudo raspi-config
 
 - As mesmas configurações podem ser feitas modificando o arquivo: _/boot/config.txt_
 
-#### Fontes importante:
+<hr>
+
+##### Habilitar Porta Serial
+
+- Adicionar a flag _enable_uart=1_ no arquivo _/boot/config.txt_
+
+<hr>
+
+#### Fontes importante
 
 - [raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md)
 - [config.txt](https://www.raspberrypi.org/documentation/configuration/config-txt/README.md)
 
-<hr>
+#### Setar ip fixo para interface ethernet
 
-##### Habilitar Porta Serial:
+Alterar o arquivo: _/etc/dhcpcd.conf_
 
-- Adicionar a flag _enable_uart=1_ no arquivo */boot/config.txt*
+```shell
+#Example static IP configuration:
+#interface eth0
+#static ip_address=192.168.0.10/24
+```
