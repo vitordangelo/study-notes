@@ -88,3 +88,67 @@ for rodada in range(1,10):
 
 São funções que não precissam ser importadas.
 [Lista de funções](https://docs.python.org/3/library/functions.html)
+
+#### Função
+
+```python
+def nome_da_funcao():
+  # todo o código identado faz parte da função
+  print("aprendendo funções")
+```
+
+#### Executar arquivo Python diretamente
+
+```python
+if (__name__ == "__main__"):
+  chamFuncao()
+```
+
+#### Operadores lógico
+
+- E (&&): _and_
+- Negação (!): _not_
+- Verdadeiro: _True_
+- Falso: _false_
+
+> Valores vazios ou zeros são considerado False, do contrário são considerados True.
+
+- **Tupla** é uma lista imutável.
+- **tuple()** converte uma lista em tupla.
+- **list()** converte uma tupla em lista.
+- Um set é uma coleção não ordenada de elementos. Cada elemento é único, isso significa que não existem elementos duplicados dentro do set.
+- Dictionary é uma lista que nos "lembra um json".
+
+#### List Comprehension
+
+```python
+palavra_secreta = "banana".upper()
+letras_acertadas = ["_" for letra in palavra_secreta]
+```
+
+```python
+inteiros = [1,3,4,5,7,8,9]
+pares = [x for x in inteiros if x % 2 == 0]
+```
+
+#### Manipulação de arquivos
+
+```python
+arquivo = open("palavras.txt", "w")
+arquivo.write("Vitor", "w")
+arquivo.write("Vitor", "a")
+arquivo.close()
+
+logo = open('python-logo.png', 'rb')
+data = logo.read()
+```
+
+- Além do r, w e a existe o modificador b que devemos utilizar quando queremos trabalhar no modo binário.
+
+```python
+with open("palavras.txt") as arquivo:
+  for linha in arquivo:
+    print(linha)
+```
+
+- Nesta abortagem de manipulação de arquivo não temos que nos preocupar em fechar o fluxo de controle.
