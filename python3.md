@@ -161,3 +161,9 @@ with open("palavras.txt") as arquivo:
 def carrega_palavra_secreta(nome_arquivo="palavras.txt"):
   arquivo = open(nome_arquivo, "r")
 ```
+
+#### Constructor
+
+```python
+def __init__(self):
+```
