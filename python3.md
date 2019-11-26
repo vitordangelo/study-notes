@@ -152,3 +152,12 @@ with open("palavras.txt") as arquivo:
 ```
 
 - Nesta abortagem de manipulação de arquivo não temos que nos preocupar em fechar o fluxo de controle.
+
+> Há uma convenção que o nome de funções e de variáveis, usamos o padrão snake_case: imprime_mensagem()
+
+#### Parâmetro opcional
+
+```python
+def carrega_palavra_secreta(nome_arquivo="palavras.txt"):
+  arquivo = open(nome_arquivo, "r")
+```
