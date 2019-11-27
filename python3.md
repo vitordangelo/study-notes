@@ -167,3 +167,40 @@ def carrega_palavra_secreta(nome_arquivo="palavras.txt"):
 ```python
 def __init__(self):
 ```
+
+#### Classe
+
+```python
+class Conta:
+    def __init__(self, numero, titular, saldo, limite):
+        print("Construindo objeto...{}".format(self))
+        self.numero = numero
+        self.titular = titular
+        self.saldo = saldo
+        self.limite = limite
+
+    def extrato(self):
+        print("Saldo {} do titular {}".format(self.saldo, self.titular))
+
+    def saca(self, valor):
+        self.saldo -= valor
+
+    def deposita(self, valor):
+        self.saldo += valor
+```
+
+> Para definir um atributo como privado, adicionamos dois caracteres underscore (\_\_) antes do nome do atributo. <br>
+> O Python **avisa** que o atributo foi criado para ser usado dentro da classe, por meio dos métodos. Porém, continuaremos a ter acesso aos valores.
+
+```python
+class Conta:
+
+    def __init__(self, numero, titular, saldo, limite):
+        print("Construindo objeto ... {}".format(self))
+        self.__numero = numero
+        self.__titular = titular
+        self.__saldo = saldo
+        self.__limite = limite
+```
+
+> Coesão é ligado ao principio de responsabilidade única. Uma classe deve ter apenas uma responsabilidade (ou deve ter apenas uma razão para existir), ela não deve assumir responsabilidades que não são delas.
