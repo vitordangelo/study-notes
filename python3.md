@@ -172,21 +172,21 @@ def __init__(self):
 
 ```python
 class Conta:
-    def __init__(self, numero, titular, saldo, limite):
-        print("Construindo objeto...{}".format(self))
-        self.numero = numero
-        self.titular = titular
-        self.saldo = saldo
-        self.limite = limite
+  def __init__(self, numero, titular, saldo, limite):
+    print("Construindo objeto...{}".format(self))
+    self.numero = numero
+    self.titular = titular
+    self.saldo = saldo
+    self.limite = limite
 
     def extrato(self):
-        print("Saldo {} do titular {}".format(self.saldo, self.titular))
+      print("Saldo {} do titular {}".format(self.saldo, self.titular))
 
     def saca(self, valor):
-        self.saldo -= valor
+      self.saldo -= valor
 
     def deposita(self, valor):
-        self.saldo += valor
+      self.saldo += valor
 ```
 
 > Para definir um atributo como privado, adicionamos dois caracteres underscore (\_\_) antes do nome do atributo. <br>
@@ -195,12 +195,45 @@ class Conta:
 ```python
 class Conta:
 
-    def __init__(self, numero, titular, saldo, limite):
-        print("Construindo objeto ... {}".format(self))
-        self.__numero = numero
-        self.__titular = titular
-        self.__saldo = saldo
-        self.__limite = limite
+  def __init__(self, numero, titular, saldo, limite):
+    print("Construindo objeto ... {}".format(self))
+    self.__numero = numero
+    self.__titular = titular
+    self.__saldo = saldo
+    self.__limite = limite
 ```
 
 > Coesão é ligado ao principio de responsabilidade única. Uma classe deve ter apenas uma responsabilidade (ou deve ter apenas uma razão para existir), ela não deve assumir responsabilidades que não são delas.
+
+#### @property
+
+Métodos que dão acesso, nomeado de properti.
+
+```python
+@property
+  def nome(self):
+    return self.__nome.title()
+```
+
+#### setter
+
+Método que atribuem um atributo
+
+```python
+@nome.setter
+def nome(self, nome):
+  print("chamando setter nome()")
+  self.__nome = nome
+```
+
+#### @staticmethod
+
+- São métodos que podemos chamar sem ter nenhuma referência (sem ter criado um objeto)
+
+```python
+@staticmethod
+def codigo_banco():
+  return "001"
+
+Conta.codigo_banco()
+```
