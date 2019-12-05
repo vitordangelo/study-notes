@@ -9,85 +9,85 @@ tags: git, github
 
 O git é capaz de identificar se a versão do código a ser enviada é a mais recente ou não, caso tenha código mais recente no servidor, as alterações local não serão enviadas até que **o conteúdo local seja atualizado** com a versão que esta no servidor.
 
-#### Adicionar todos os arquivos:
+## Adicionar todos os arquivos:
 
-```
+```shell
 git add .
 ```
 
-#### Commit:
+## Commit
 
-```
+```shell
 git commit -m "Criando arquivo”
 ```
 
 - A boa prática pede para colocarmos mensagens descritivas, evitando que fiquem muito grandes.
 
-#### Estados:
+## Estados
 
 - HEAD: Estado atual do nosso código, ou seja, onde o Git nos colocou
 - Working tree: Local onde os arquivos realmente estão sendo armazenados e editados
 - index: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
 
-#### Lista todos os commits já feitos:
+## Lista todos os commits já feitos
 
-```
+```shell
 git log
 ```
 
-#### Verifica endereço remoto do repositório:
+## Verifica endereço remoto do repositório
 
-```
+```shell
 git remote -v
 ```
 
 - O arquivo .gitignore tem uma função especial, de listar os diretórios e arquivos que devem ser ignorados ao realizar o commit.
 
-#### Envia os arquivos para o repositório remoto:
+## Envia os arquivos para o repositório remoto
 
-```
+```shell
 git push origin master
 ```
 
-#### Baixa as atualizações presentes no repositório remoto:
+## Baixa as atualizações presentes no repositório remoto
 
-```
+```shell
 git pull
 ```
 
-#### Alterar endereço remoto:
+## Alterar endereço remoto
 
-```
+```shell
 git remote set-url origin git@github.com:vitordangelo/xxxx.git
 ```
 
-#### Lista todas as branchs:
+## Lista todas as branchs
 
-```
+```shell
 git branch
 ```
 
-#### Cria novo branch:
+## Cria novo branch
 
-```
+```shell
 git branch titulo
 ```
 
-#### Mudar para determinada branch:
+## Mudar para determinada branch
 
-```
+```shell
 git checkout titulo
 ```
 
-#### Cria uma nova branch e já muda pra ela:
+## Cria uma nova branch e já muda pra ela
 
-```
+```shell
 git checkout -b lista
 ```
 
-#### Commit pra juntar os arquivos de um branch com o master:
+## Commit pra juntar os arquivos de um branch com o master
 
-```
+```shell
 git commit merge homologation
 ```
 
@@ -95,52 +95,58 @@ git commit merge homologation
 
 - git rebase titulo, e o Git pegará os commits na branch título, atualizando master, que possui todos os commits contidos em titulo, além do commit que havia nela mesma. Deste modo, geramos uma única linha, sem confusões.
 
-#### Juntar todos os commits em uma branch:
+## Juntar todos os commits em uma branch
 
-```
+```shell
 git rebase titulo
 ```
 
-#### Salva as alterações em um local temporário sem fazer commit:
+## Salva as alterações em um local temporário sem fazer commit
 
-```
+```shell
 git stash
 ```
 
-#### Lista todas as alterações salvas em stash:
+## Lista todas as alterações salvas em stash
 
-```
+```shell
 git stash list
 ```
 
-#### Recupera as modificações salvas na stash:
+## Recupera as modificações salvas na stash
 
-```
+```shell
 git stash apply 0
 ```
 
-#### Recupera as modificações da stash e a remove da lista:
+## Recupera as modificações da stash e a remove da lista
 
-```
+```shell
 git stash pop
 ```
 
-#### Viaja no tempo, indo para o estágio desejado:
+## Viaja no tempo, indo para o estágio desejado
 
-```
+```shell
 git checkout ea539b3
 ```
 
-#### Volta para o estágio atual:
+## Volta para o estágio atual
 
-```
+```shell
 git checkout master
 ```
 
-#### Juntar commits:
+## Juntar commits
 
-```
+```shell
 git rebase -i ea539b3 (até que nível deseja juntar)
+```
+
+## Alterar mensagem de um commit
+
+```shell
+git commit --amend -m <mensagem>
 ```
 
 Para fazermos isto, substituiremos os pick por s

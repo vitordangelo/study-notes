@@ -4,3 +4,4 @@
 - [Git](./git.md)
 - [Python 3](./python3.md)
 - [SSH](./ssh.md)
+- [Alexa](./alexa.md)
