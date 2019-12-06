@@ -5,3 +5,4 @@
 - [Python 3](./python3.md)
 - [SSH](./ssh.md)
 - [Alexa](./alexa.md)
+- [Google Cloud](./gcloud.md)
