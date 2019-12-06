@@ -237,3 +237,17 @@ def codigo_banco():
 
 Conta.codigo_banco()
 ```
+
+# PIP
+
+## Listar pacotes instalados
+
+```shell
+pip list
+```
+
+## Instalar pacotes de uma lista de dependências
+
+```shell
+pip install -r requirements.txt
+```
