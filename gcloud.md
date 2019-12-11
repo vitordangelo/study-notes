@@ -52,3 +52,31 @@ gsutil cp <new_folder> gs://<bucketname>/
 ```shell
 gsutil cp <local_file> gs://<bucketname>/<new_folder>/
 ```
+
+# Compute (VM)
+
+## Listar instâncias
+
+```shell
+gcloud compute instances list
+```
+
+## Para uma instância
+
+```shell
+gcloud compute instances stop <nome_instancia>
+```
+
+## Iniciar (start) uma instância
+
+```shell
+gcloud compute instances start <nome_instancia>
+```
+
+# Config
+
+## Setar uma configuração existente
+
+```shell
+gcloud config set project <nome_projeto>
+```
