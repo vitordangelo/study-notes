@@ -6,3 +6,4 @@
 - [SSH](./ssh.md)
 - [Alexa](./alexa.md)
 - [Google Cloud](./gcloud.md)
+- [dns](./dns.md)
