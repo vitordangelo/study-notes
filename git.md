@@ -5,6 +5,8 @@ description:
 tags: git, github
 ---
 
+![git](./images/git.png)
+
 # Controle de versão
 
 O git é capaz de identificar se a versão do código a ser enviada é a mais recente ou não, caso tenha código mais recente no servidor, as alterações local não serão enviadas até que **o conteúdo local seja atualizado** com a versão que esta no servidor.
@@ -151,3 +153,10 @@ git commit --amend -m <mensagem>
 
 Para fazermos isto, substituiremos os pick por s
 Com isso, os commits se tornarão um só, o único que possui pick
+
+## Clonar um repositório específico
+
+```shell
+git clone -b <branch> <remote_repo>
+
+```
