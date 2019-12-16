@@ -8,3 +8,5 @@
 - [Google Cloud](./gcloud.md)
 - [DNS](./dns.md)
 - [PM2](./pm2.md)
+- [Nginx](./nginx.md)
+- [VSCode](./vscode.md)
