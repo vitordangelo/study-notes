@@ -99,6 +99,8 @@ def nome_da_funcao():
 
 #### Executar arquivo Python diretamente
 
+- Executa o arquivo (pelo terminal) sem a necessidade de importar como um módulo.
+
 ```python
 if (__name__ == "__main__"):
   chamFuncao()
@@ -143,7 +145,7 @@ logo = open('python-logo.png', 'rb')
 data = logo.read()
 ```
 
-- Além do r, w e a existe o modificador b que devemos utilizar quando queremos trabalhar no modo binário.
+- Além do __r, w e a__ existe o modificador b que devemos utilizar quando queremos trabalhar no modo binário.
 
 ```python
 with open("palavras.txt") as arquivo:
@@ -207,7 +209,7 @@ class Conta:
 
 #### @property
 
-Métodos que dão acesso, nomeado de properti.
+Métodos que dão acesso, nomeado de property.
 
 ```python
 @property
