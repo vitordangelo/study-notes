@@ -145,7 +145,7 @@ logo = open('python-logo.png', 'rb')
 data = logo.read()
 ```
 
-- Além do __r, w e a__ existe o modificador b que devemos utilizar quando queremos trabalhar no modo binário.
+- Além do **r, w e a** existe o modificador b que devemos utilizar quando queremos trabalhar no modo binário.
 
 ```python
 with open("palavras.txt") as arquivo:
@@ -248,8 +248,28 @@ Conta.codigo_banco()
 pip list
 ```
 
-## Instalar pacotes de uma lista de dependências
+## Instala pacotes de uma lista de dependências
 
 ```shell
 pip install -r requirements.txt
+```
+
+## [Exportar pacotes de dependência](https://pip.pypa.io/en/stable/reference/pip_freeze/)
+
+```sh
+pip freeze > requeriments.txt
+```
+
+# [Ambiente virtual](https://docs.python.org/3/library/venv.html)
+
+Requer a instalação do **python3-venv** apt-get install python3-venv.
+
+```sh
+apt-get install python3-venv
+```
+
+Criar ambiente:
+
+```sh
+python3 -m venv .venv
 ```
