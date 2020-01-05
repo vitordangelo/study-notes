@@ -48,3 +48,76 @@ mongodump --host cluster0-xxxx.gcp.mongodb.net:27017 --db curso_alura --ssl --us
 ```sh
 mongorestore --host cluster0-xxxx.gcp.mongodb.net:27017 --db curso_alura --ssl --username vitor--password 5X3G7QONo3fgLPwV --authenticationDatabase admin ./pl-api
 ```
+
+# Comandos
+
+## [find](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
+
+### Lista os documentos com filtro
+
+```js
+db.autores.find({
+  "artigos.slug": "visualizando-dados-de-frequencia"
+});
+```
+
+### Lista os documentos com filtro e limita da quantidade de resultado
+
+```js
+db.autores.find(
+  {
+    "artigos.slug": "visualizando-dados-de-frequencia"
+  },
+  {
+    "artigos.titulo": 1,
+    "artigos.conteudo": 1
+  }
+);
+```
+
+### Lista todos os documentos
+
+```js
+db.autores.find();
+```
+
+---
+
+## [insertOne](https://docs.mongodb.com/manual/reference/method/db.collection.insertOne/)
+
+### Insere um documento na coleção
+
+```js
+db.autores.insertOne({
+  nome: "Vitor Ivan DAngelo",
+  descricao: "Descrição do post",
+  email: "metroid.p2p@gmail.com",
+  senha: "1234"
+});
+```
+
+---
+
+## [update](https://docs.mongodb.com/manual/reference/method/db.collection.update/)
+
+### Atualiza um documento
+
+```js
+db.autores.update(
+  {
+    nome: "Vitor Ivan DAngelo"
+  },
+  {
+    $set: {
+      artigos: [
+        {
+          slug: "projeto-modelagem",
+          titulo: "Modelagem do MongoDB",
+          conteudo: "Este é um post que fala sobre modelagem do MongoDB",
+          dataCriado: ISODate("2020-01-05")
+        }
+      ]
+    }
+  }
+);
+```
