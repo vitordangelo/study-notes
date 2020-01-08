@@ -22,6 +22,14 @@ gcloud auth revoke --all
 
 # Storage
 
+![Bucket](./images/bucket.png)
+
+## Cria um novo bucket
+
+```sh
+gsutil mb gs://vmhack
+```
+
 ## Lista buckets
 
 ```shell
@@ -41,19 +49,21 @@ gsutil cp <arquivo> <bucket>
 
 ```
 
-## Criar pasta no bucket
-
-```shell
-gsutil cp <new_folder> gs://<bucketname>/
-```
-
 ## Upload de um arquivo para uma nova pasta
 
 ```shell
 gsutil cp <local_file> gs://<bucketname>/<new_folder>/
 ```
 
+## Manter o bucket como público (Permissão)
+
+```sh
+gsutil acl ch -u AllUsers:R gs://vmhack
+```
+
 # Compute (VM)
+
+![Bucket](./images/compute.png)
 
 ## Listar instâncias
 
