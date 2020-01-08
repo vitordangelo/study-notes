@@ -11,7 +11,14 @@ tags: git, github
 
 O git é capaz de identificar se a versão do código a ser enviada é a mais recente ou não, caso tenha código mais recente no servidor, as alterações local não serão enviadas até que **o conteúdo local seja atualizado** com a versão que esta no servidor.
 
-## Adicionar todos os arquivos:
+## Configurar dados do usuário
+
+```sh
+git config --global user.name "FIRST_NAME LAST_NAME"
+git config --global user.email "MY_NAME@example.com"
+```
+
+## Adicionar todos os arquivos
 
 ```shell
 git add .
