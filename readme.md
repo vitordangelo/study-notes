@@ -6,6 +6,8 @@
 - [ffsend](./ffsend.md)
 - [Git](./git.md)
 - [Google Cloud](./gcloud.md)
+- [Inteligencia Emocional - Alura](./inteligencia_emocional.md)
+- [Linux](./linux.md)
 - [MongoDB](./mongodb.md)
 - [Nginx](./nginx.md)
 - [PM2](./pm2.md)
@@ -13,3 +15,4 @@
 - [Raspberry Pi](./raspberryPi.md)
 - [SSH](./ssh.md)
 - [VSCode](./vscode.md)
+- [Zip](./zip.md)
