@@ -277,3 +277,17 @@ Alterar o arquivo: _/etc/dhcpcd.conf_
 #interface eth0
 #static ip_address=192.168.0.10/24
 ```
+
+# Ativar o Copy & Paste no VNC
+
+Instalar o autocutsel.
+
+```sh
+sudo apt-get install autocutsel -y
+```
+
+Abra o arquivo **/home/pi/.vnc/xstartup** e insira o comando
+
+```sh
+autocutsel -fork
+```
