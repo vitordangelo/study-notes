@@ -53,7 +53,7 @@ mongorestore --host cluster0-xxxx.gcp.mongodb.net:27017 --db curso_alura --ssl -
 
 ## [find](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
 
-### Lista os documentos com filtro
+Lista os documentos com filtro
 
 ```js
 db.autores.find({
@@ -61,7 +61,7 @@ db.autores.find({
 });
 ```
 
-### Lista os documentos com filtro e limita da quantidade de resultado
+Lista os documentos com filtro e limita da quantidade de resultado
 
 ```js
 db.autores.find(
@@ -75,7 +75,7 @@ db.autores.find(
 );
 ```
 
-### Lista todos os documentos
+Lista todos os documentos
 
 ```js
 db.autores.find();
@@ -85,7 +85,7 @@ db.autores.find();
 
 ## [insertOne](https://docs.mongodb.com/manual/reference/method/db.collection.insertOne/)
 
-### Insere um documento na coleção
+Insere um documento na coleção
 
 ```js
 db.autores.insertOne({
@@ -100,7 +100,7 @@ db.autores.insertOne({
 
 ## [update](https://docs.mongodb.com/manual/reference/method/db.collection.update/)
 
-### Atualiza um documento
+Atualiza um documento
 
 ```js
 db.autores.update(
