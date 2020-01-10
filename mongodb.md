@@ -121,3 +121,96 @@ db.autores.update(
   }
 );
 ```
+
+## Aggregate
+
+Maniputa os dados, reordena e salva em outra coleção.
+
+[Aggregation](https://docs.mongodb.com/manual/aggregation/)
+
+[Unwind](https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/)
+
+[Project](https://docs.mongodb.com/manual/reference/operator/aggregation/project/)
+
+```sh
+db.autores.aggregate([
+  {
+    $unwind: "$artigos"
+  },
+  {
+    $project: {
+      _id: 0,
+      "autor.nome": "$nome",
+      "autor.descricao": "$descricao",
+      "autor.email": "$email",
+      "autor.senha": "$senha",
+      slug: "$artigos.slug",
+      titulo: "$artigos.titulo",
+      conteudo: "$artigos.conteudo",
+      dataCriado: "$artigos.dataCriado"
+    }
+  },
+  {
+    $out: "artigos"
+  }
+]);
+```
+
+## [drop](https://docs.mongodb.com/manual/reference/method/db.collection.drop/)
+
+Remove a coleção
+
+```sh
+db.autores.drop()
+```
+
+## [getCollectionNames()](https://docs.mongodb.com/manual/reference/method/db.getCollectionNames/)
+
+Retorna a lista de coleções existente
+
+```sh
+db.getCollectionNames()
+```
+
+## [executionStats](https://docs.mongodb.com/manual/reference/explain-results/)
+
+Retorna uma explicação do processo de execução do comando
+
+```sh
+db.artigos
+  .find({
+    categorias: "Programação"
+  })
+  .explain("executionStats");
+
+```
+
+## [createIndex()](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/)
+
+Cria um indice.
+
+Ao criar um indice o processo de busca é mais eficiente, não sendo necessário scanear toda a coleção em busca do dado desejado.
+
+```sh
+db.artigos.createIndex({ categorias: 1})
+```
+
+Cria um indice unico.
+
+```sh
+db.artigos.createIndex({ slug: 1}, { inique: true })
+```
+
+Remove um indice.
+
+```sh
+db.artigos.dropIndex('slug_1')
+```
+
+## [getIndexes()](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/)
+
+Lista os indices da coleção.
+
+```sh
+db.artigos.getIndexes()
+```
