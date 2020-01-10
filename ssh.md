@@ -1,5 +1,11 @@
 ![SSH](./images/ssh-icon.png)
 
+# SSH
+
+## Adicionar chave como confiável
+
+Crie um arquivo com o nome authorized_keys no diretório .ssh/ com as chaves de deseja tornar confiável para acesso sem senha.
+
 # SCP
 
 - SCP (secure copy) linha de comando para realizar cópia de arquivos entre dois locais (ex: máquina local e servidor em nuvem).
