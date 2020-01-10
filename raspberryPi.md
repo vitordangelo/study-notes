@@ -16,6 +16,8 @@ tags: raspberrypi, iot
 #### Configurando SSH
 
 Para habilitar acesso SSH na raspberry basta criar um arquivo de nome ssh, _sem extensão_, na raiz da partição boot.
+Usuário padrão: pi
+Senha padrão: raspberry
 
 #### Configurar o Wifi
 
