@@ -6,6 +6,12 @@
 
 Crie um arquivo com o nome authorized_keys no diretório .ssh/ com as chaves de deseja tornar confiável para acesso sem senha.
 
+## Remover uma chave autorizada
+
+```sh
+ssh-keygen -f "/home/vitor/.ssh/known_hosts" -R "vitordangelo.ddns.net"
+```
+
 # SCP
 
 - SCP (secure copy) linha de comando para realizar cópia de arquivos entre dois locais (ex: máquina local e servidor em nuvem).
