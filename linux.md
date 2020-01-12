@@ -56,3 +56,17 @@ Icon=/usr/share/icons/Papirus/64x64/apps/telegram.svg
 Type=Application
 Categories=Internet;
 ```
+
+# Montar disco
+
+Use o comando abaixo para listar os discos/partições
+
+```sh
+lsblk
+```
+
+Aponte a partição que deseja montar
+
+```sh
+udisksctl mount -b <path_da_particao>
+```
