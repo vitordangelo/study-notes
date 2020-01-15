@@ -59,14 +59,14 @@ Categories=Internet;
 
 # Montar disco
 
+[Ubuntu: Mount The Drive From Command Line](https://www.cyberciti.biz/faq/mount-drive-from-command-line-ubuntu-linux/)
+
 Use o comando abaixo para listar os discos/partições
 
 ```sh
 lsblk
 ```
 
-Aponte a partição que deseja montar
-
 ```sh
-udisksctl mount -b <path_da_particao>
+sudo mount /dev/sdb1 /media/newhd
 ```
