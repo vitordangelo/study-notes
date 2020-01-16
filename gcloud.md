@@ -61,6 +61,12 @@ gsutil cp <local_file> gs://<bucketname>/<new_folder>/
 gsutil acl ch -u AllUsers:R gs://vmhack
 ```
 
+## Remove um diretório
+
+```sh
+gsutil rm -r gs://vmhack/videos
+```
+
 # Compute (VM)
 
 ![Bucket](./images/compute.png)

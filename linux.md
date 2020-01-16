@@ -56,3 +56,17 @@ Icon=/usr/share/icons/Papirus/64x64/apps/telegram.svg
 Type=Application
 Categories=Internet;
 ```
+
+# Montar disco
+
+[Ubuntu: Mount The Drive From Command Line](https://www.cyberciti.biz/faq/mount-drive-from-command-line-ubuntu-linux/)
+
+Use o comando abaixo para listar os discos/partições
+
+```sh
+lsblk
+```
+
+```sh
+sudo mount /dev/sdb1 /media/newhd
+```
