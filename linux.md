@@ -88,3 +88,11 @@ for f in *.mp4; do
   mv "$f" "${f// /}"
 done
 ```
+
+# DNS
+
+## Listar servidores de DNS
+
+```sh
+nmcli device show wlp2s0 | grep IP4.DNS
+```
