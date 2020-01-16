@@ -70,3 +70,21 @@ lsblk
 ```sh
 sudo mount /dev/sdb1 /media/newhd
 ```
+
+# Hacks
+
+## Criar vários arquivos
+
+```sh
+touch file{1..10}.avi
+
+touch 'teste 01'{1..10}.avi
+```
+
+## Renomear arquivos (removendo espaço)
+
+```sh
+for f in *.mp4; do
+  mv "$f" "${f// /}"
+done
+```
