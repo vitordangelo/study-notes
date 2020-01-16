@@ -10,6 +10,7 @@
 - [Linux](./linux.md)
 - [MongoDB](./mongodb.md)
 - [Nginx](./nginx.md)
+- [Nmap](./nmap.md)
 - [PM2](./pm2.md)
 - [Python 3](./python3.md)
 - [Raspberry Pi](./raspberryPi.md)
