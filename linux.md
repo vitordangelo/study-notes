@@ -89,6 +89,12 @@ for f in *.mp4; do
 done
 ```
 
+## Mover vários arquivos de diferentes diretórios para um destino
+
+```sh
+mv -v /home/vivek/dir1/ /home/vivek/dir2/ -t /nas/home/vivek/archived/
+```
+
 # DNS
 
 ## Listar servidores de DNS
