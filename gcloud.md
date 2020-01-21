@@ -20,6 +20,20 @@ gcloud auth login <email>
 gcloud auth revoke --all
 ```
 
+# Config
+
+## Lista configurações
+
+```sh
+gcloud config configurations list
+```
+
+## Remove arquivo de configuração
+
+```sh
+gcloud config configurations delete config_file
+```
+
 # Storage
 
 ![Bucket](./images/bucket.png)
