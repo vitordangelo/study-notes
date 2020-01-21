@@ -91,6 +91,12 @@ gsutil rm -r gs://vmhack/videos
 gcloud compute instances list
 ```
 
+## Setar a zona de configuração da VM
+
+```sh
+gcloud config set compute/zone ZONE
+```
+
 ## Para uma instância
 
 ```shell
