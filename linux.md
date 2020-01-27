@@ -102,3 +102,17 @@ mv -v /home/vivek/dir1/ /home/vivek/dir2/ -t /nas/home/vivek/archived/
 ```sh
 nmcli device show wlp2s0 | grep IP4.DNS
 ```
+
+# Utils
+
+## Obter a versão do Kernel
+
+```sh
+uname -r
+```
+
+## Obter a arquitetura do sistema
+
+```sh
+uname -m
+```
