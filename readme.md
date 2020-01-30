@@ -9,6 +9,7 @@
 - [Inteligencia Emocional - Alura](./inteligencia_emocional.md)
 - [Linux](./linux.md)
 - [MongoDB](./mongodb.md)
+- [motioneyeos](./motioneyeos.md)
 - [Nginx](./nginx.md)
 - [Nmap](./nmap.md)
 - [PM2](./pm2.md)
