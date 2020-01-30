@@ -1,8 +1,9 @@
 # motioneyeos
 
-## [Documentação](https://github.com/ccrisan/motioneyeos/wiki/Installation)
+- ## [motioneyeOs](https://github.com/ccrisan/motioneyeos/wiki/Installation)
+  - [Releases](https://github.com/ccrisan/motioneyeos/releases)
 
-[Releases](https://github.com/ccrisan/motioneyeos/releases)
+- ## [motioneye](https://github.com/ccrisan/motioneye/wiki)
 
 ### Script para instalação
 
