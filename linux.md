@@ -117,6 +117,18 @@ uname -r
 uname -m
 ```
 
+## Alterar timezone
+
+Use o comando _timedatectl_ para verificar a configuração atual.
+
+Lista timezones disponíveis _timedatectl list-timezones_
+
+Alterar timezone:
+
+```sh
+sudo timedatectl set-timezone Europe/Bratislava
+```
+
 # Network
 
 ## Definir IP fixo para interface eth0

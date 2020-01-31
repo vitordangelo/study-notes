@@ -109,6 +109,12 @@ gcloud compute instances stop <nome_instancia>
 gcloud compute instances start <nome_instancia>
 ```
 
+## Alterar timezone
+
+```sh
+sudo apt install tzdata -y
+```
+
 # Config
 
 ## Setar uma configuração existente
