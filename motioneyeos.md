@@ -43,6 +43,9 @@
 5 Add an init script, configure it to run at startup and start the motionEye server:
 
     sudo cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
+    
+6 Start service:
+
     sudo systemctl daemon-reload
     sudo systemctl enable motioneye
     sudo systemctl start motioneye
