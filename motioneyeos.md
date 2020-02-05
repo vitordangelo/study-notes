@@ -26,28 +26,30 @@
 
 1 Install motion, ffmpeg and v4l-utils:
 
-    apt-get install motion ffmpeg v4l-utils
+    sudo apt-get install motion ffmpeg v4l-utils
 
 2 Install the dependencies from the repositories:
 
-     apt-get install python-pip python-dev curl libssl-dev libcurl4-openssl-dev libjpeg-dev
+    sudo apt-get install python-pip python-dev curl libssl-dev libcurl4-openssl-dev libjpeg-dev
 
 3 Install motioneye, which will automatically pull Python dependencies (tornado, jinja2, pillow and pycurl):
 
-    pip install motioneye
+    sudo pip install motioneye
 
 4 Prepare the media directory:
 
-     mkdir -p /var/lib/motioneye
+    sudo mkdir -p /var/lib/motioneye
 
 5 Add an init script, configure it to run at startup and start the motionEye server:
 
-    cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
-    systemctl daemon-reload
-    systemctl enable motioneye
-    systemctl start motioneye
+    sudo cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
+    sudo systemctl daemon-reload
+    sudo systemctl enable motioneye
+    sudo systemctl start motioneye
 
-## To upgrade to the newest version of motionEye, just issue:
+## To upgrade to the newest version of motionEye, just issue
+
+> Só funciona se instalado via PIP
 
     pip install motioneye --upgrade
 
