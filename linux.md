@@ -129,6 +129,12 @@ Alterar timezone:
 sudo timedatectl set-timezone Europe/Bratislava
 ```
 
+## Alterar terminal padrão
+
+```sh
+git@github.com:vitordangelo/study-notes.git
+```
+
 # Network
 
 ## Definir IP fixo para interface eth0
