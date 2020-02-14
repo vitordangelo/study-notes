@@ -132,7 +132,7 @@ sudo timedatectl set-timezone Europe/Bratislava
 ## Alterar terminal padrão
 
 ```sh
-git@github.com:vitordangelo/study-notes.git
+sudo update-alternatives --config x-terminal-emulator
 ```
 
 # Network
