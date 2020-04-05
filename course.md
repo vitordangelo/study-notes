@@ -1,28 +1,3 @@
-# Minhas notas de Estudo
-
-- Alura
-  - [Inteligência Emocional: Práticas para o cotidiano](./inteligencia_emocional.md)
-  - [OWASP Top 10: de Injections a Broken Access Control](./OWASP.md)
-  - [Raspberry Pi Servidor: Samba, VPN, IoT e AWS S3](./pi_vpn.md)
-- [Alexa](./alexa.md)
-- [DNS](./dns.md)
-- [Docker](./docker.md)
-- [ffsend](./ffsend.md)
-- [Git](./git.md)
-- [Google Cloud](./gcloud.md)
-- [Linux](./linux.md)
-- [MongoDB](./mongodb.md)
-- [motioneyeos](./motioneyeos.md)
-- [Nginx](./nginx.md)
-- [Nmap](./nmap.md)
-- [PM2](./pm2.md)
-- [Python 3](./python3.md)
-- [Raspberry Pi](./raspberryPi.md)
-- [SFTP](./sftp.md)
-- [SSH](./ssh.md)
-- [VSCode](./vscode.md)
-- [Zip](./zip.md)
-
 # Em Andamento
 
 - [Amazon Alexa: Programe a sua assistente pessoal](https://cursos.alura.com.br/course/amazon-alexa-assistente-pessoal)

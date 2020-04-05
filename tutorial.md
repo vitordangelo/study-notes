@@ -1,0 +1,1 @@
+- [How to Obtain Free Wildcard SSL Certificates from Let’s Encrypt](https://www.maketecheasier.com/obtain-free-wildcard-ssl-certificates-lets-encrypt/)
