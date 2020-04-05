@@ -56,6 +56,8 @@ sudo /etc/init.d/smbd restart
 
 ### Verificando se esta habilitado para iniciar no boot e se o serviço esta rodando
 
+>sudo systemctl status smbd
+
 ![stats](https://i.imgur.com/CwuiVja.png)
 
 **enabled** indica que esta ativo para iniciar durante o boot
