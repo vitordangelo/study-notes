@@ -15,13 +15,29 @@ sudo apt install samba samba-common -y
 > sudo vim /etc/samba/smb.conf
 
 ```txt
+[global]
+	log file = /var/log/samba/log.%m
+	logging = file
+	map to guest = Bad User
+	max log size = 1000
+	obey pam restrictions = Yes
+	pam password change = Yes
+	panic action = /usr/share/samba/panic-action %d
+	passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+	passwd program = /usr/bin/passwd %u
+	server role = standalone server
+	unix password sync = Yes
+	usershare allow guests = Yes
+	idmap config * : backend = tdb
+
+
 [share]
-comment = Pi shared folder
-create mask = 0777
-directory mask = 0777
-guest ok = No
-path = /share
-read only = No
+	comment = Pi shared folder
+	create mask = 0777
+	directory mask = 0777
+	guest ok = No
+	path = /share
+	read only = No
 ```
 
 ### Testparm
