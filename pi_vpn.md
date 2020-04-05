@@ -16,15 +16,12 @@ sudo apt install samba samba-common -y
 
 ```txt
 [share]
-Comment = Pi shared folder
-Path = /share
-Browseable = yes
-Writeable = Yes
-only guest = no
+comment = Pi shared folder
 create mask = 0777
 directory mask = 0777
-Public = yes
-Guest ok = yes
+guest ok = No
+path = /share
+read only = No
 ```
 
 ### Testparm
