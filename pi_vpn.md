@@ -12,6 +12,8 @@ sudo apt install samba samba-common -y
 
 - [Doc - smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
 
+> sudo vim /etc/samba/smb.conf
+
 ```txt
 [share]
 Comment = Pi shared folder
