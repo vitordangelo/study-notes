@@ -6,6 +6,12 @@
 
 Crie um arquivo com o nome authorized_keys no diretório .ssh/ com as chaves de deseja tornar confiável para acesso sem senha.
 
+Ou então:
+
+```sh
+ssh-copy-id -i ~/.ssh/mykey user@host
+```
+
 ## Remover uma chave autorizada
 
 ```sh

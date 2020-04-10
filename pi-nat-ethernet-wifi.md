@@ -10,6 +10,12 @@ sudo apt-get install dnsmasq -y
 
 ## 2. Configure the eth0
 
+**Backup file before:**
+
+```sh
+sudo cp /etc/dhcpcd.conf /etc/dhcpcd.conf.bk
+```
+
 > sudo vim /etc/dhcpcd.conf
 
 Edit the eth0 section like this:
@@ -26,7 +32,7 @@ static domain_name_server 1.1.1.1
 **Backup file before:**
 
 ```sh
-sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf.bk
 ```
 
 > sudo vim /etc/dnsmasq.conf
@@ -57,3 +63,15 @@ This will enable packet forwarding on next reboot. But if you want to try it rig
 
 ## 5 Config the IP Tables
 
+```sh
+sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+```
+
+```sh
+sudo iptables -A FORWARD -i wlan0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+```
+
+```sh
+sudo iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT
+```
