@@ -4,6 +4,7 @@
   - [Inteligência Emocional: Práticas para o cotidiano](./inteligencia_emocional.md)
   - [OWASP Top 10: de Injections a Broken Access Control](./OWASP.md)
   - [Raspberry Pi Servidor: Samba, VPN, IoT e AWS S3](./pi_vpn.md)
+  - [Segurança de redes: Crie um firewall com pfSense e iptables](./alura/iptables.md)
 - [Alexa](./alexa.md)
 - [DNS](./dns.md)
 - [Docker](./docker.md)
