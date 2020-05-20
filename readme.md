@@ -6,6 +6,7 @@
   - [Raspberry Pi Servidor: Samba, VPN, IoT e AWS S3](./pi_vpn.md)
   - [Segurança de redes: Crie um firewall com pfSense e iptables](./alura/iptables.md)
   - [Terraform: Automatize a infraestrutura na nuvem](./alura/terraform.md)
+  - [Webpack: Manipulando módulos na sua webapp](./alura/webpack.md)
 - [Alexa](./alexa.md)
 - [DNS](./dns.md)
 - [Docker](./docker.md)
