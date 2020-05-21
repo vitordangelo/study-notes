@@ -5,6 +5,12 @@ description:
 tags: raspberrypi, iot
 ---
 
+# Criando o cartão de memória (DD)
+
+```bash
+dd bs=4M if=2020-02-13-raspbian-buster.img of=/dev/sdX conv=fsync
+```
+
 #### GPIO - Raspberry Pi 3 B+
 
 ![Raspberry GPIO](https://pi4j.com/1.2/images/j8header-3b-plus.png)

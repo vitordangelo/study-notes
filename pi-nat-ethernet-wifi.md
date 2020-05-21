@@ -75,3 +75,5 @@ sudo iptables -A FORWARD -i wlan0 -o eth0 -m state --state RELATED,ESTABLISHED -
 ```sh
 sudo iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT
 ```
+
+---
