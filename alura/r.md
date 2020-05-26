@@ -79,6 +79,15 @@ Exemplo de Histograma:
 - Sobre a moda, elemento que mais se repete na distribuição
   Usamos mediana ou moda para dados Ordinais
 
+- Outliers são números extremos, geralmente muito grandes ou muito pequenos, no meio de uma distribuição. Por conta disso, geralmente são números que eliminamos na hora de analisar. Colocar o salário do Sílvio Santos no meio dos salários dos brasileiros alterará o valor da média.
+
+- Em um boxplot são exibidos a mediana, primeiro quartil, terceiro quartil, maior e menor elementos da distribuição.
+
+- É necessário nos atentarmos quando formos comparar duas distribuições. Não podemos levar em conta apenas a Tendência Central, mas também o desvio padrão desses dados, e por aí vamos entender como tal distribuição está se comportando.
+
+- O que um desvio padrão pequeno indica, em relação aos dados?
+  - Que os dados estão próximos da média.
+
 # R
 
 ## Atribuir uma variável a um valor
@@ -139,4 +148,101 @@ W = 0.9868, p-value = 0.9672
 summary(lista)
    Min. 1st Qu.   Median    Mean 3rd Qu.    Max.
    1.00    3.00     7.00   13.09   13.50   67.00
+```
+
+## Boxplot
+
+```R
+numeros <- c(1,4,54,65,33,45,2,67,8,6,55,44,8,79,43,12,5,9,1,2,3,44,5,65,34,76,89,7)
+
+boxplot(numeros)
+```
+
+![Boxplot](https://i.imgur.com/tHtS8Du.png)
+
+## Salvar um gráfico em arquivo
+
+```R
+png(file="/home/vitor/Downloads/plot.png", width=700, height=700)
+boxplot(numeros)
+dev.off()
+```
+
+## Calcular o desvio padrão
+
+```R
+numeros <- c(1,4,54,65,33,45,2,67,8,6,55,44,8,79,43,12,5,9,1,2,3,44,5,65,34,76,89,7)
+
+sd(numeros)
+```
+
+## Ler arquivo .csv
+
+```R
+nums <- read.csv(file="/home/vitor/Downloads/numbers.csv")
+```
+
+## Obter apenas os números da primeira coluna do csv
+
+```R
+nums <- read.csv(file="/home/vitor/Downloads/numbers.csv")
+nums$X1
+```
+
+# Análise de dados: Introdução com R
+
+## Valores de uma variável de um dataset
+
+```R
+aulas$section_id
+```
+
+## Ordenar valores de uma variável
+
+```R
+sort(aulas$section_id)
+```
+
+## Obter o total de valores únicos
+
+```R
+length(unique(aulas$section_id))
+```
+
+## Ordenar em uma tabela
+
+```R
+sort(table(aulas$section_id))
+```
+
+## Instalar o pacote plyr
+
+```R
+install.packages("plyr")
+```
+
+## Listar a quantidade de vezes que um elemento se repete
+
+```R
+library(plyr)
+
+auxiliar <- count(aulas, vars = "course_id")
+```
+
+## Exportar um dataset
+
+```R
+write.csv(auxiliar, "popularidade.csv")
+```
+
+## Renomear colunas de um dataset
+
+```R
+duracao <- rename(duracao, replace = c("user_id" = "aluno", "course_id" = "curso", "timeToFinish" = "dias"))
+```
+
+## Customizar um histograma
+
+```R
+hist(duracao$dias, breaks = 20, main = "Histograma do Tempo", ylab = "Quantidade", xlab = "Tempo", ylim = c(0, 2500), col = "blue")
 ```
