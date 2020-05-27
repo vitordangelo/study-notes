@@ -334,4 +334,6 @@ server <- function(input, output) {
       main = "Histogram of waiting times")
     })
 }
+
+shinyApp(ui = ui, server = server)
 ```
