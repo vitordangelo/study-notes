@@ -246,3 +246,92 @@ duracao <- rename(duracao, replace = c("user_id" = "aluno", "course_id" = "curso
 ```R
 hist(duracao$dias, breaks = 20, main = "Histograma do Tempo", ylab = "Quantidade", xlab = "Tempo", ylim = c(0, 2500), col = "blue")
 ```
+
+## Obter a média e ignorar os dados faltantes
+
+```R
+mean(duracao$dias, na.rm = TRUE)
+```
+
+## Obter a mediana e ignorar os dados faltantes
+
+```R
+median(duracao$dias, na.rm = TRUE)
+```
+
+## Juntar dois banco de dados
+
+```R
+popularidade_e_duracao <- merge(sumario_estatistico, popularidade, by = 'curso')
+```
+
+## Traçar uma linha de previsão
+
+```R
+modelo.linear <- lm(popularidade_e_duracao$popularidade~popularidade_e_duracao$dias)
+
+abline(modelo.linear)
+```
+
+## Carregar a lib Shiny e subir o servidor
+
+```R
+library(shiny)
+ui <- fluidPage()
+server <- function(input, output) {}
+shinyApp(ui = ui, server = server)
+```
+
+# [Tutorial Shiny](https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/)
+
+## Install Shiny
+
+```R
+install.packages("shiny")
+```
+
+## app.R
+
+> app.R has three components:
+
+- a user interface object
+- a server function
+- a call to the shinyApp function
+
+The user interface (ui) object controls the layout and appearance of your app. The server function contains the instructions that your computer needs to build your app. Finally the shinyApp function creates Shiny app objects from an explicit UI/server pair.
+
+> Note: Prior to version 0.10.2, Shiny did not support single-file apps and the ui object and server function needed to be contained in separate scripts called ui.R and server.R
+
+## Shiny App 1
+
+```r
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel("Vitor DAngelo - Shiny App"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput(
+        inputId = "bins",
+        label = "Number of bins:",
+        min = 1,
+        max = 50,
+        value = 30)
+    ),
+    mainPanel(
+      plotOutput(outputId = "distPlot")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$distPlot <- renderPlot({
+    x <- faithful$waiting
+    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+
+    hist(x, breaks = bins, col = "#75AADB", border = "white",
+      xlab = "Waiting time to next eruption (in mins)",
+      main = "Histogram of waiting times")
+    })
+}
+```
