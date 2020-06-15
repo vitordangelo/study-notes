@@ -301,39 +301,3 @@ install.packages("shiny")
 The user interface (ui) object controls the layout and appearance of your app. The server function contains the instructions that your computer needs to build your app. Finally the shinyApp function creates Shiny app objects from an explicit UI/server pair.
 
 > Note: Prior to version 0.10.2, Shiny did not support single-file apps and the ui object and server function needed to be contained in separate scripts called ui.R and server.R
-
-## Shiny App 1
-
-```r
-library(shiny)
-
-ui <- fluidPage(
-  titlePanel("Vitor DAngelo - Shiny App"),
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput(
-        inputId = "bins",
-        label = "Number of bins:",
-        min = 1,
-        max = 50,
-        value = 30)
-    ),
-    mainPanel(
-      plotOutput(outputId = "distPlot")
-    )
-  )
-)
-
-server <- function(input, output) {
-  output$distPlot <- renderPlot({
-    x <- faithful$waiting
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-    hist(x, breaks = bins, col = "#75AADB", border = "white",
-      xlab = "Waiting time to next eruption (in mins)",
-      main = "Histogram of waiting times")
-    })
-}
-
-shinyApp(ui = ui, server = server)
-```
