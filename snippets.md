@@ -25,13 +25,26 @@ methodName = (params) => {};
 # imn
 
 ```js
-mport 'module'
+import 'module'
 ```
 
 # anfn
 
 ```js
 (params) => {};
+
+```
+
+# fin
+
+```js
+for(let itemName in objectName { }
+```
+
+# cdm
+
+```js
+componentDidMount = () => { }
 ```
 
 # rafce
