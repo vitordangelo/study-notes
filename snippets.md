@@ -41,6 +41,12 @@ import 'module'
 for(let itemName in objectName { }
 ```
 
+# fof
+
+```js
+ for(let item of object) { }
+```
+
 # cdm
 
 ```js
