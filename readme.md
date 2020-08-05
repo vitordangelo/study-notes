@@ -8,6 +8,7 @@
   - [Terraform: Automatize a infraestrutura na nuvem](./alura/terraform.md)
   - [Webpack: Manipulando módulos na sua webapp](./alura/webpack.md)
 - [Alexa](./alexa.md)
+- [ClamAV](./clamav.md)
 - [DNS](./dns.md)
 - [Docker](./docker.md)
 - [FFmpeg](./ffmpeg.md)
