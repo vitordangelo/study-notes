@@ -94,6 +94,18 @@ git checkout titulo
 git checkout -b lista
 ```
 
+## Deletar uma branch local
+
+```shell
+git branch -d <branch>
+```
+
+## Deletar uma branch Remoto
+
+```shell
+git push origin -d <branch>
+```
+
 ## Commit pra juntar os arquivos de um branch com o master
 
 ```shell
