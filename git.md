@@ -179,3 +179,10 @@ Com isso, os commits se tornarão um só, o único que possui pick
 git clone -b <branch> <remote_repo>
 
 ```
+
+## Remover commit (ou série de commits)
+
+```shell
+git reset --hard <last_known_good_commit>
+git push -f origin
+```
