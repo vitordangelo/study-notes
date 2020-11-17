@@ -198,3 +198,9 @@ git reset --merge
 ```shell
  git rebase --continue
 ```
+
+## Resetar um rebase no meio do processo de rebase
+
+````shell
+git rebase --abort```
+````
