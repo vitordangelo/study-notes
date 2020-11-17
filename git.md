@@ -186,3 +186,15 @@ git clone -b <branch> <remote_repo>
 git reset --hard <last_known_good_commit>
 git push -f origin
 ```
+
+## Resetar um merge no meio do processo de merge
+
+```shell
+git reset --merge
+```
+
+## Error editor
+
+```shell
+ git rebase --continue
+```
