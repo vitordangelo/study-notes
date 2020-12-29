@@ -204,3 +204,23 @@ git reset --merge
 ````shell
 git rebase --abort```
 ````
+
+# Stash
+
+## Lista todos os stashes criado
+
+```sh
+git stash list
+```
+
+## Lista todos os arquivos modificados no último stash
+
+```sh
+git stash show
+```
+
+## Remove todos stash
+
+```sh
+git stash clear
+```
